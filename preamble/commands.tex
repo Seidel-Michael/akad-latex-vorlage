@@ -3,6 +3,24 @@
 
 %% Todos mithilfe eines Rahmens hervorheben
 \newcommand{\todo}[1]{\fbox{\parbox{\textwidth-\fboxsep*6-\unitlength}{\textbf{To do:} #1}}}
+%\newcommand{\todo}[1]{}
 
 %% eine Fußnote als Platzhalter für ein Zitat
 \newcommand{\citationneeded}{\footnote{\textit{missing citation}}}
+
+%% Footnote without number
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+% Zitiermakros
+\newcommand{\mycite}[2]{„#1“~\autocite{#2}}
+\newcommand{\mycitetranslate}[2]{„#1“~\autocite[eigene Übersetzung]{#2}}
+\newcommand{\mycitepage}[3]{„#1“~\autocite[#3]{#2}}
+\newcommand{\mycitepagetranslate}[3]{„#1“~\autocite[S. #3 eigene Übersetzung]{#2}}
+\newcommand{\myreferencepage}[2]{\autocite[#2]{#1}}
+\newcommand{\vglpage}[2]{\autocite[vgl.][#2]{#1}}
+\newcommand{\vglmin}[2]{\autocite[vgl.][#2]{#1}{}}
+\newcommand{\vgl}[1]{\autocite[vgl.][]{#1}}
+\newcommand{\vglcph}[2]{\autocite[vgl.][Abschnitt #2]{#1}}
+\newcommand{\citesep}{$^, $}

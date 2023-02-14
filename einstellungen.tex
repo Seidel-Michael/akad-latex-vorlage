@@ -8,6 +8,9 @@
 \IfFileExists{\string~/secrets.tex}{\input{\string~/secrets.tex}}{} % aus HOME Verzeichnis (gültig für alle Assignments auf dem Rechner egal wo sie liegen)       % chktex 27 chktex tries to run this regardless of file existance
 % Im Folgenden nun die defaults für alle Werte, die nicht in einer der secrets.tex Dateien gesetzt wurden:
 
+\IfFileExists{settings.tex}{\input{settings.tex}}{}
+\IfFileExists{settings-assignment.tex}{\input{settings-assignment.tex}}{}
+
 
 %%% Themenbezogene Daten (bei jedem neuen Assignment zu aktualisieren):
 
@@ -77,15 +80,16 @@
 \appendixtrue{}      %% Anhang
 
 %% Diese Vorlage wird für ein Assignment benutzt (statt für eine Abschlussarbeit)
-\assignmenttrue{}
+%\assignmenttrue{}
+\projecttrue{}
 
 %% dieser Bericht beinhaltelt sensible Firmendaten und benötigt einen Sperrvermerk:
-%\sperrvermerktrue
+\sperrvermerktrue{}
 %% Sperrvermerke beziehen sich im Text direkt auf die Art des Berichts. Sollte ein Sperrvermerk notwendig sein, muss hier die richtige Wortwahl definiert werden:
 %% Projektbericht:
-%\providecommand*{\SperrvermerkBausteinEins}{Der nachfolgende Projektbericht}
-%\providecommand*{\SperrvermerkBausteinZwei}{des Projektberichts}
-%\providecommand*{\SperrvermerkBausteinDrei}{Der Projektbericht}
+\providecommand*{\SperrvermerkBausteinEins}{Der nachfolgende Projektbericht}
+\providecommand*{\SperrvermerkBausteinZwei}{des Projektberichts}
+\providecommand*{\SperrvermerkBausteinDrei}{Der Projektbericht}
 %% Diplom-/Master-/Bachelor-Arbeit:
 %\providecommand*{\SperrvermerkGrad}{Diplom}
 %\providecommand*{\SperrvermerkGrad}{Master}
